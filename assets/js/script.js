@@ -5,7 +5,7 @@ camelize = function camelize(str) {
 
 async function getPokemones(n) {
     try {
-        const URL = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${n}`;
+        const URL = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${n*20}`;
         const dataRaw = await fetch(URL);
         const data = await dataRaw.json();
 
@@ -42,7 +42,7 @@ async function getPokemones(n) {
 }
 
 const min = 1;
-const max = 1262;
+const max = 20;
 
 // Obtener un número aleatorio entre min y max
 const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
